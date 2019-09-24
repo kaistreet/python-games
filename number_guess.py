@@ -15,6 +15,5 @@ y = ['y','ya','yea','yeah','yes','yup']
 while guess_again in y:
 	guess_number_game()
 	guess_again = str(input('Want to guess again? '))
-	y = ['y','ya','yea','yeah','yes','yup']
 else:
 	print('thanks for playing')
