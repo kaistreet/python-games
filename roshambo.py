@@ -1,6 +1,4 @@
-"""Problem 8:
-Make a two-player Rock-Paper-Scissors game.
-"""
+#A two-player Rock-Paper-Scissors game.
 print("Let's play ro sham bo!")
 user_one_name = str(input('Ready player one? Tell me your name: '))
 print('Welcome',user_one_name)
