@@ -1,4 +1,5 @@
 import random
+from multiprocessing.pool import ThreadPool
 def randomizer():
 	rando_numbered_list = random.randint(1,9)
 	ask_user_number = int(input('Guess a number between 1 and 9: '))
@@ -11,11 +12,13 @@ def randomizer():
 	else:
 		print("i don't think you guessed a number")
 
-randomizer()
-play_again = str(input('want to play again? '))
-y = ['y','ya','yee','yes','yup','ok','sure','mhmm','yeah','yea']
-while play_again in y:
-	randomizer()
-	play_again = str(input('want to play again? '))
+pool = ThreadPool(processes=4)
+pool.apply(randomizer)
+pool.close()
+play_again = str(input('want to play again? [enter y if yes] '))
+while play_again[1] == 'y':
+	pool = ThreadPool(processes=4)
+	pool.apply(randomizer)
+	pool.close()
 else:
 	print('hope you enjoyed this game!')
